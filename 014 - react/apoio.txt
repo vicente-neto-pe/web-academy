@@ -1,0 +1,40 @@
+aula 1 
+
+ PROJETO INICIAL
+https://colabweb.ufam.edu.br/mod/url/view.php?id=49759
+Boa noite a todos! Este será o repositório inicial que usaremos para criar nosso projeto da LOJA com React. Aqueles que puderem, por favor, baixem o projeto e executem-no em um contêiner Docker seguindo as etapas abaixo:
+Extraia o arquivo.
+
+Acesse a pasta raiz do projeto, onde estão localizados os diretórios "backend" e "frontend", e execute os comandos a seguir.
+
+Observação: Se estiver usando o sistema operacional Windows, utilize o comando 'copy' em vez de 'cp' e \ em vez de /.
+
+cp .env.example .env
+cp frontend/.env.example frontend/.env
+cp backend/.env.example backend/.env
+cd frontend && npm install && cd ..
+cd backend && npm install && cd ..
+docker-compose up
+docker exec -it loja_backend npx prisma migrate dev
+docker exec -it loja_backend npx prisma db seed
+
+atividade 0
+
+Desenvolvimento de Componentes em React
+
+Você deve desenvolver um conjunto de componentes em React para auxiliar em diversas tarefas matemáticas. Cada componente desempenha uma função específica. Sua tarefa é implementar os seguintes componentes:
+
+Área do Triângulo: Crie um componente que, dado a base e a altura de um triângulo, calcule e retorne a sua área.
+
+Área do Quadrado: Implemente um componente responsável por calcular a área de um quadrado com base no comprimento do lado fornecido.
+
+Área do Trapézio: Desenvolva um componente capaz de calcular a área de um trapézio com base nos seus lados e altura.
+
+Verificação de Paridade: Crie um componente que, ao receber um número como entrada, determine se é ímpar ou par, retornando o resultado.
+
+Verificação de Número Primo: Implemente um componente que avalie se um dado número é primo ou não, apresentando o veredito correspondente.
+
+Sua solução será avaliada com base na clareza do código! As entradas do usuário devem ser feitas por meio de inputs e armazenadas em useState, e o resultado deve ser exibido em um alert.
+
+Entrega: A entrega deve ser feita apenas colocando prints de cada um dos componentes.
+

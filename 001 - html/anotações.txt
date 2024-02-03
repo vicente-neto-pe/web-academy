@@ -1,0 +1,7 @@
+03/02
+o atributo id de uma tag cria uma variavel global com o id no js
+utilização de tags semanticas melhoram(header, main, aside, footer) o seo 
+use server side rendering do nextjs para deixar o react amigavel com seo
+o atributo action é para o recurso
+checked no checkbos define o default value nao usar default value
+checkbox vs radio

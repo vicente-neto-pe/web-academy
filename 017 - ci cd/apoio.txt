@@ -1,0 +1,8 @@
+docker swarm vs cubernetes
+https://circleci.com/blog/docker-swarm-vs-kubernetes/
+aula 3
+https://www.youtube.com/watch?v=tg95WVzfeTw
+aula 4 
+https://www.youtube.com/watch?v=Bzngtg0ETc0
+video suplementar
+https://www.youtube.com/watch?v=-y93tiwkBR4

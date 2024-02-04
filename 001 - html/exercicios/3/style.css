@@ -1,0 +1,75 @@
+header{
+    overflow: hidden;
+}
+header img{
+    width: 100%;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+a{
+    text-decoration: none;
+}
+.nav-links{
+    color:white;
+}
+a:active{
+    color:black;
+}
+nav{
+background-color: gray;
+width: 100%;
+}
+
+ul{
+    display: flex;
+    margin:0;
+}
+li{
+    padding: 0px 10px;
+}
+header{
+    height: 150px;
+}
+main{
+    width:69%;
+}
+aside{
+    width: 200px;
+    padding: 0px 15px;
+}
+footer{
+    background-color: gray;
+    padding:10px;
+    color: white;
+    width: 100%;
+}
+
+
+header{
+    width: 100%;
+
+}
+
+article{
+    display: flex;
+}
+figcaption{
+    font-size: 12px;
+}
+
+.article-subtitle, aside a, aside h2{
+    color:rgb(255, 103, 128);
+}
+aside section{
+    margin-bottom: 40px;
+}
+
+#aside-title-contact{
+    margin-bottom: 0;
+}
+aside p{
+    margin: 5px 0;
+}

@@ -1,0 +1,57 @@
+body{
+    box-sizing: border-box;
+    margin:0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+    gap:20px;
+}
+
+.first-exercise{
+    
+    grid-template-areas: 
+    "first first second second" 
+    "third fourth fourth fourth" 
+    "fifth fifth fifth fifth";
+}
+
+.second-exercise{
+    grid-template-areas: 
+    "first first first first" 
+    "third third fourth fourth" 
+    "third third second fifth";
+
+}
+
+div{
+    border-radius: 10px;
+}
+
+.first{
+    grid-area: first;
+    background-color: #8b0000;
+}
+
+.second{
+    grid-area: second;
+    background-color: #00008b;
+
+}
+
+.third{
+    grid-area: third;
+ background-color: #006400;
+}
+
+.fourth{
+    grid-area: fourth;
+    background-color: #8b008b;
+
+}
+
+.fifth{
+    grid-area: fifth;
+    background-color: #ff8c00;
+
+}

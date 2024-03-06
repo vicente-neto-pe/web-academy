@@ -1,0 +1,51 @@
+<body>
+  <h1>To-do</h1>
+
+  <div>
+    <p id="lista-titulo" name="lista">Lista de atividades:</p>
+  </div>
+
+  <div>
+    <input id='iteminput' placeholder="Digite aqui o item" />
+    <button onclick="handleSubmit()">Adicionar</button>
+  </div>
+
+  <ul id="lista-itens">
+    <li>item a</li>
+  </ul>
+
+  <div>
+    <button  onclick="handleRemoveLastListItem()">Remover último item</button>
+  </div>
+  <script>
+    /*a) Implementar funcionalidade de adicionar novo item à lista, de forma
+      dinâmica, a partir do campo de <input> e botão de “adicionar” - 2,0
+      pontos
+        i) Considerar que não é permitido adicionar itens vazios, ou seja,
+        com string vazia ' '.
+        ii) Necessário verificar como recuperar o conteúdo de um campo
+        “input”.
+        b) Implementar funcionalidade de remover último item da lista, de forma
+        dinâmica, a partir do botão de “remover último item” - 2,0 pontos
+        i) Considerar que essa funcionalidade só faz sentido caso haja
+        pelo menos um (1) elemento presente na lista de itens.*/
+
+    const handleSubmit =()=>{
+      const inputValue = document.querySelector('#iteminput').value;
+      if(inputValue){
+        const createListItem = document.createElement('li');
+        createListItem.textContent = inputValue;
+        const listElement = document.querySelector('#lista-itens');
+        listElement.appendChild(createListItem);
+      }
+    }
+
+    const handleRemoveLastListItem = () =>{
+      const ulElement =  document.querySelector('#lista-itens');
+      if(ulElement.children.length > 0){
+        ulElement.removeChild(ulElement.lastElementChild);
+      }
+    }
+  </script>
+</body>
+

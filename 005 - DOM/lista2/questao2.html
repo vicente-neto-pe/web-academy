@@ -1,0 +1,25 @@
+<body>
+  <h1>Várias listas</h1>
+
+  <div>
+    <p id="lista-titulo" name="lista">Lista de itens:</p>
+  </div>
+
+  <ul id="lista-itens-1">
+    <li id="one" class="hot">item a</li>
+    <li id="two" class="hot">item b</li>
+    <li id="three" class="hot">item c</li>
+    <li id="four">item d</li>
+  </ul>
+  <script>
+    /*i) Utilize a propriedade nodeValue para alterar o texto do
+        parágrafo com id "lista-titulo" para "Nova Lista de Itens";*/
+    document.querySelector('#lista-titulo').replaceChildren("Nova Lista de Itens");
+
+    /*ii) Selecione o segundo item da lista com id "two" e utilize a
+        propriedade textContent para alterar o texto para "Item B
+        Atualizado".*/
+    document.querySelector('#two').textContent = "Item B Atualizado";
+    
+  </script>
+</body>

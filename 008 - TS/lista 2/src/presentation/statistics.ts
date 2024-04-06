@@ -1,7 +1,7 @@
 import { classroom } from "../main.js";
 
 export class Statistics {
-    htmlElement  =  document.querySelector<HTMLDivElement>("#statistics")!;
+    private htmlElement = document.querySelector<HTMLDivElement>("#statistics")!;
 
     constructor() {
         this.htmlElement.innerHTML = "<h1>Estatísticas</h1>";

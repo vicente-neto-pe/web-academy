@@ -3,8 +3,8 @@ import { classroom, statistics } from "../main.js";
 import { StudentList } from "./studentList.js";
 
 export class Studentform {
-  currentStudent: Student | null = null;
-  form = document.querySelector("#addStudentForm");
+  private currentStudent: Student | null = null;
+  private form = document.querySelector("#addStudentForm");
 
   constructor() {
     if (this.form) {

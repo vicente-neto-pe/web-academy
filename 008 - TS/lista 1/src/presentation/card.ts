@@ -3,10 +3,10 @@ import { Task } from "../domain/task";
 import { taskList } from "../main";
 
 export class Card {
-  taskList: List;
-  task: Task;
-  taskListElement: HTMLUListElement = document.querySelector("ul")!;
-  cardElement = document.createElement("li");
+  private taskList: List;
+  private task: Task;
+  private taskListElement: HTMLUListElement = document.querySelector("ul")!;
+  private cardElement = document.createElement("li");
 
   constructor(task: Task, myList: List) {
     this.task = task;

@@ -1,1 +1,9 @@
 *.mp4
+*.txt
+*.zip
+*.tgz
+*.pptx
+*.docx
+*.pdf
+*.md
+node_modules

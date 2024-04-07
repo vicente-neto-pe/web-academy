@@ -4,10 +4,10 @@ import { cart } from "../main.js";
 export class CartComponent implements Observer {
   private htmlElement = document.getElementById("cart") as HTMLDivElement;
 
-
   constructor() {
     cart.addObserver(this);
   }
+  
   update = () => {
     const totalPrice = cart.getTotalPrice() || 0;
     this.htmlElement.innerHTML = `

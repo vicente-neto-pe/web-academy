@@ -50,20 +50,20 @@ export class Classroom {
         this.students.forEach((Student) => {
             mean += Student.getAge();
         });
-        return mean / this.students.length;
+        return Math.round(mean / this.students.length);
     };
     getAverageHeight = () => {
         let mean = 0;
         this.students.forEach((Student) => {
             mean += Student.getHeight();
         });
-        return mean / this.students.length;
+        return Math.round(mean / this.students.length);
     };
     getAverageWeight = () => {
         let mean = 0;
         this.students.forEach((Student) => {
             mean += Student.getWeight();
         });
-        return mean / this.students.length;
+        return Math.round(mean / this.students.length);
     };
 }

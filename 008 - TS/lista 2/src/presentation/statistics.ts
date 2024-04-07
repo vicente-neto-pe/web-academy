@@ -2,10 +2,6 @@ import { classroom } from "../main.js";
 
 export class Statistics {
     private htmlElement = document.querySelector<HTMLDivElement>("#statistics")!;
-
-    constructor() {
-        this.htmlElement.innerHTML = "<h1>Estatísticas</h1>";
-    }
     
     update = ()=>{
         const students = classroom.getstudents().length;

@@ -1,0 +1,43 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+body{
+    background-color: aliceblue;
+}
+#header, h2{
+    color:#4D926F
+}
+nav {
+    margin-bottom: 25px;
+}
+th, td{
+    width: 50px;
+    text-align: center;
+}
+table {
+    width: 50%!important;
+}
+.buttons-wrapper {
+    display: flex;
+    gap:15px;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+#add-button{
+    position: absolute;
+    right: 0;
+}
+#add-form{
+    width: 400px;
+    background-color: white;
+    padding: 25px;
+}
+#table-wrapper{
+    padding:25px;
+}
+.id-name-col{
+    width: 200px;
+    text-align: center;
+}

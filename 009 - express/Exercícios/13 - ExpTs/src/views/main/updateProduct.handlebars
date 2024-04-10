@@ -1,0 +1,18 @@
+<div class='container'>
+<form method="POST" action="/update_product">
+  <input type="hidden" id="id" value="{{product.id}}" name="id" required>
+  <div class="mb-3">
+    <label for="nome" class="form-label" >Nome</label>
+    <input type="text" class="form-control" name="nome" id="nome" value="{{product.nome}}" required>
+  </div>
+  <div class="mb-3">
+    <label for="preco" class="form-label">Preço</label>
+    <input type="number" class="form-control" name="preco" id="preco" min="0" value="{{product.preco}}" required>
+  </div>
+  <div class="mb-3">
+    <label for="estoque" class="form-label">Estoque</label>
+    <input type="number" class="form-control" name="estoque" id="estoque" min="0" value="{{product.estoque}}" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+</div>

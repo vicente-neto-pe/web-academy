@@ -1,0 +1,36 @@
+<div class='container'>
+  <table class='table table-hover table-striped'>
+    <thead class='table-primary'>
+      <tr>
+        <th scope='col'>Id</th>
+        <th scope='col' class="id-name-col">Nome</th>
+        <th scope='col'>Preço</th>
+        <th scope='col'>Estoque</th>
+        <th scope='col'></th>
+      </tr>
+    </thead>
+    <tbody class='table-group-divider'>
+      {{#each products}}
+        <tr>
+          <th scope='row'>{{id}}</th>
+          <td class="id-name-col">{{nome}}</td>
+          <td>{{preco}}</td>
+          <td>{{estoque}}</td>
+          <th scope='row'>
+            <div class='buttons-wrapper'>
+              <form action="/delete_product/{{id}}" method="POST">
+                <button type="submit" class='btn btn-danger'>deletar</button>
+              </form>
+              <a href='/atualizar/{{id}}'>
+                <button class='btn btn-warning'>editar</button>
+              </a>
+            </div>
+          </th>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <a href='/adicionar' id="add-button">
+    <button class='btn btn-primary'>Adicionar produto</button>
+  </a>
+</div>

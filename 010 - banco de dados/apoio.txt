@@ -1,5 +1,0 @@
-aula 2 
-https://www.youtube.com/watch?v=uHOAbexF-lo
-aula 3
-https://www.youtube.com/watch?v=eWgW_rBHQ6I
-https://www.prisma.io/docs/orm/prisma-client/queries/crud

@@ -1,2 +1,0 @@
-repo base 
-https://github.com/dbfernandes/expLoja

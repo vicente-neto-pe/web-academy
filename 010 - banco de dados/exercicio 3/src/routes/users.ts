@@ -12,6 +12,4 @@ userRouter.put('/:cpf', userController.updateUser);
 userRouter.delete('/:cpf', userController.deleteUser);
 userRouter.post('/', userController.createUser);
 
-
-
 export default userRouter;

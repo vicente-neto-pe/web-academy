@@ -1,0 +1,53 @@
+version: '3.8'
+services:
+  db:
+    container_name: lib_db
+    image: mysql:8.0
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - rede_bd
+  backend:
+    container_name: lib_back
+    build: 
+      context: ./backend
+    volumes:
+      - ./backend/log:/app/log
+      - ./backend/prisma:/app/prisma
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    depends_on:
+      - db
+    networks:
+      - rede_bd
+  frontend:
+    container_name: lib_front
+    build: ./frontend
+    ports:
+      - ${FRONTEND_PORT}:80
+  php-my-admin:
+    container_name: lib_php_my_admin
+    image: phpmyadmin:latest
+    ports:
+      - ${PHP_MY_ADMIN_PORT}:80
+    environment:
+      - PMA_HOST=lib_db
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    depends_on:
+      - db
+    networks:
+      - rede_bd
+networks:
+  rede_bd:
+    driver: bridge
+volumes:
+  mysql_data:

@@ -30,21 +30,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const adicionaUmProduto = (produto: ItemCarrinho): void => {
     setItensCarrinho((prevState) => {
-      const itemAEditar = prevState.find((item) => item.id === produto.id);
-      if (itemAEditar) {
-        return prevState.map((item) => (item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item));
-      }
-      return prevState;
+      return prevState.map((item) => (item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item));
     });
   };
 
   const removeUmProduto = (produto: ItemCarrinho): void => {
     setItensCarrinho((prevState) => {
-      const itemAEditar = prevState.find((item) => item.id === produto.id);
-      if (itemAEditar) {
-        return prevState.map((item) => (item.id === produto.id ? { ...item, quantidade: item.quantidade - 1 } : item));
-      }
-      return prevState;
+      return prevState.map((item) => (item.id === produto.id ? { ...item, quantidade: item.quantidade - 1 } : item));
     });
   };
 

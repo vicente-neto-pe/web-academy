@@ -1,12 +1,20 @@
 import Image from "next/image";
 import { Produto } from "../types/produto";
+import { useRouter } from "next/navigation";
 
 type Props = {
   produto: Produto;
   adicionaAoCarrinho: (produto: Produto) => void;
 };
 
-export default function CardProduto({ produto, adicionaAoCarrinho }: Props) {
+export default function CardProduto({ produto , adicionaAoCarrinho}: Props) {
+  const router = useRouter();  
+
+  const handleProductDetailsClick = () => {
+    const nome = produto.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    router.push(`/produto/${nome}`);
+  }
+
   return (
     <div className="col">
       <div className="card shadow-sm h-100">
@@ -14,10 +22,12 @@ export default function CardProduto({ produto, adicionaAoCarrinho }: Props) {
         <div className="card-body bg-light">
           <h5 className="card-title">{produto.nome}</h5>
           <p className="card-text text-secondary">R$ {produto.preco}</p>
-          <button className="btn btn-light d-block w-100 mt-2" type="button">
+          <button className="btn btn-light d-block w-100 mt-2" type="button" onClick={handleProductDetailsClick}>
             Ver detalhes
           </button>
-          <button className="btn btn-dark d-block w-100" type="button" onClick={() => adicionaAoCarrinho(produto)}>
+          <button className="btn btn-dark d-block w-100" type="button"
+           onClick={() => adicionaAoCarrinho(produto)}
+           >
             Adicionar no carrinho
           </button>
         </div>

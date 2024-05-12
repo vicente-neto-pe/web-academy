@@ -1,6 +1,15 @@
+'use client';
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const PATHSTOHIDE = ["/login", "/cadastro"];
+
+  const route = usePathname();
+
+  if (PATHSTOHIDE.includes(route)) return null;
+  
   return (
     <nav className="navbar navbar-expand-md bg-light border-bottom border-body sticky-top">
       <div className="container-fluid">

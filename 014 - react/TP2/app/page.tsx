@@ -1,35 +1,27 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
-import { ListagemProdutos } from "./components/ListagemProdutos";
+import { Suspense, useEffect, useState } from "react";
 import ResumoCarrinho from "./components/ResumoCarrinho";
-import { CartContext } from "./context/cartContext";
+import { ListagemProdutos } from "./components/ListagemProdutos";
+import { mockProdutos } from "./mocks/produtos";
+import { Produto } from "./types/produto";
+import { useListaProdutos } from "./services/produtos";
 
 export default function Produtos() {
-  const cartContext = useContext(CartContext);
+  const {produtos, isPending, isError} = useListaProdutos();
+  const [totalCompra, setTotalCompra] = useState(0);
+  const [quantidadeItens, setQuantidadeItens] = useState(0);
 
-  const [produtos, setProdutos]= useState([])
-
-  useEffect(() => {
-    const controller = new AbortController;
-    const signal = controller.signal;
-    const fecthProdutos = async()=>{
-      const response = await fetch("https://ranekapi.origamid.dev/json/api/produto", {signal})
-      const produtos = await response.json()
-      setProdutos(produtos)
-    }
-    fecthProdutos();
-    return () => {
-      controller.abort();
-    }
-  }, [])
-  
+  const adicionarAoCarrinho = (produto: Produto) => {
+    setQuantidadeItens((prev) => prev + 1);
+    setTotalCompra((prev) => prev + parseFloat(produto.preco));
+  };
 
   return (
     <>
       <div className="container p-5 pb-0">
-        <ResumoCarrinho itensCarrinho={cartContext.itensCarrinho}/>
-        <ListagemProdutos adicionarAoCarrinho={cartContext.adicionaAoCarrinho} />
+        <ResumoCarrinho totalCompra={totalCompra} quantidadeItens={quantidadeItens} />
+        {produtos ? <ListagemProdutos produtos={produtos} adicionarAoCarrinho={adicionarAoCarrinho} /> : <h5>Carregando...</h5>}
       </div>
     </>
   );

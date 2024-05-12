@@ -2,12 +2,12 @@ import { ItemCarrinho as IItemCarrinho } from "../types/itemCarrinho";
 import ItemCarrinho from "./ItemCarrinho";
 
 type Props = {
-  itensCarrinho : IItemCarrinho[] 
-  removerProduto: (id: string) => void
+  itensCarrinho : IItemCarrinho[]
+  removerItemDoCarrinho: (id: string) => void;
 }
 
 
-export default function ListagemCarrinho({itensCarrinho, removerProduto}:Props) {
+export default function ListagemCarrinho({itensCarrinho, removerItemDoCarrinho}:Props) {
 
   
   return (
@@ -23,7 +23,7 @@ export default function ListagemCarrinho({itensCarrinho, removerProduto}:Props) 
       </thead>
       <tbody>
         {itensCarrinho.map((item, i) => (
-          <ItemCarrinho key={i} item={item} removerProduto={removerProduto}/>
+          <ItemCarrinho removerItemDoCarrinho={removerItemDoCarrinho} key={i} item={item}/>
         ))}
       </tbody>
     </table>

@@ -6,10 +6,8 @@ interface IItemFavoritoProps {
   setFavoritos: React.Dispatch<React.SetStateAction<Produto[]>>;
 }
 
-export default function ItemFavorito({
-  itemFavorito,
-  setFavoritos,
-}: IItemFavoritoProps) {
+export default function ItemFavorito({itemFavorito, setFavoritos}: IItemFavoritoProps) {
+  
   const removerFavorito = (id: string) => {
     setFavoritos((favoritos) => favoritos.filter((item) => item.id !== id));
   };

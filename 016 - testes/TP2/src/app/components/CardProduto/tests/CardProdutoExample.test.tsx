@@ -2,10 +2,7 @@ import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CardProduto from "../CardProduto";
 import { mockProdutos } from "@/app/mocks/produtos";
-import {
-  FavoritosProvider,
-  useProdutoFavorito,
-} from "../../../State/FavoritosProvider";
+import { FavoritosProvider, useProdutoFavorito } from "../../../State/FavoritosProvider";
 import { calculaValorComPorcentagemDeDesconto } from "@/app/helpers";
 
 jest.mock("../../../State/FavoritosProvider", () => ({
@@ -21,10 +18,7 @@ describe("CardProduto", () => {
     const produtoMockado = mockProdutos[0];
     const { nome, preco, fotos, desconto } = produtoMockado;
 
-    const precoComDesconto = calculaValorComPorcentagemDeDesconto(
-      Number(produtoMockado.preco),
-      produtoMockado.desconto
-    );
+    const precoComDesconto = calculaValorComPorcentagemDeDesconto(Number(produtoMockado.preco), produtoMockado.desconto);
 
     render(
       <FavoritosProvider>

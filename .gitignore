@@ -5,5 +5,4 @@
 *.pptx
 *.docx
 *.pdf
-*.md
 node_modules
